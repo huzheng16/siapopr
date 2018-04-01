@@ -110,10 +110,11 @@ void SimpleCloneList::SampleAndTraverse(std::ofstream &F, int sim_number, int sa
       // only write if sampled any
       if(samples_placed > 0)
       {
-        //F << sim_number << "\t" << sample_counter << "\t" <<
+        //  F << sim_number << "\t" << sample_counter << "\t" <<
         //  pnode->clone_id << "\t" << samples_placed << "\n";
-        F << pnode->clone_id << "\t" << pnode->birth_rate << "\t" <<
-         pnode->death_rate << "\t" << samples_placed << "\n";
+        F << sim_number << "\t" <<
+            pnode->clone_id << "\t" << pnode->birth_rate << "\t" <<
+            pnode->death_rate << "\t" << samples_placed << "\n";
       }
 
       samples_to_place = samples_to_place - samples_placed;
