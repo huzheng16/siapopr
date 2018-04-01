@@ -545,7 +545,8 @@ int siapop(double tot_life = 40000.0,
     sprintf(fn, "%s/sampledata.txt", output_folder);
     sample_data.open(fn);
     sample_data.setf(std::ios::fixed);
-    sample_data << "run\tsample_number\tunique_id\tnumber_obs\n";
+    //sample_data << "run\tsample_number\tunique_id\tnumber_obs\n";
+    sample_data << "unique_id\tbirthrate\tdeathrate\tnumcells\n";
   }
 
   // set RNG seed
