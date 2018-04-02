@@ -67,7 +67,7 @@ The following R packages are required for certain functions.
 To install in R, type:
 ```{r, eval = F}
 install.packages("devtools")
-devtools::install_git("https://github.com/olliemcdonald/siapopr")
+devtools::install_git("https://github.com/huzheng16/siapopr")
 install.packages("dplyr")
 ```
 
