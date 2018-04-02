@@ -30,6 +30,7 @@ struct GlobalParameters
   int num_sims;
   int num_samples;
   int sample_size;
+  int passage;
   double detection_threshold;
   double observation_frequency;
   double start_time;
