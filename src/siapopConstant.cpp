@@ -26,6 +26,8 @@
 #include "constantCloneList.h"
 #include "constantParameterList.h"
 
+using namespace std;
+
 // structure contains all global parameters used in multiple source files
 GlobalParameters gpcons;
 gsl_rng* constant_rng;
