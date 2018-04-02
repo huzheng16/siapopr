@@ -222,8 +222,14 @@ int siapop(double tot_life = 40000.0,
   // declare and open output stream for simulation statistics
   char fn[100];
   std::ofstream sim_stats;
-  std::string out_sim_stats = "sim_stats_T" + std::to_string(passage) + ".txt";
-  sprintf(fn, out_sim_stats, output_folder);
+  
+  std::string out_string;
+  std::stringstream ss;
+  ss << passage;
+  out_string = ss.str();
+  
+  std::string out_sim_stats = "sim_stats_T" + out_string + ".txt";
+  sprintf(fn, out_sim_stats.c_str());
   //sprintf(fn,"%s/sim_stats.txt", output_folder);
   sim_stats.open(fn);
   sim_stats.setf(std::ios::fixed);
@@ -499,9 +505,9 @@ int siapop(double tot_life = 40000.0,
   }
 
   // declare and open other output streams for time and end of sim clone list
-  std::ofstream clonedata;
-  std::string out_clone = "clonedata_T" + std::to_string(passage) + ".txt";
-  sprintf(fn, out_clone, output_folder);
+  std::ofstream clonedata;  
+  std::string out_clone = "clonedata_T" + out_string + ".txt";
+  sprintf(fn, out_clone.c_str());
   //sprintf(fn, "%s/clonedata.txt", output_folder);
   clonedata.open(fn);
   clonedata.setf(std::ios::fixed);
@@ -518,8 +524,8 @@ int siapop(double tot_life = 40000.0,
   }
 
   std::ofstream timedata;
-  std::string out_time = "timedata_T" + std::to_string(passage) + ".txt";
-  sprintf(fn, out_time, output_folder);
+  std::string out_time = "timedata_T" + out_string + ".txt";
+  sprintf(fn, out_time.c_str());
   //sprintf(fn, "%s/timedata.txt", output_folder);
   timedata.open(fn);
   timedata.setf(std::ios::fixed);
@@ -553,8 +559,8 @@ int siapop(double tot_life = 40000.0,
   std::ofstream sample_data;
   if( (gpcons.sample_size > 0) & (gpcons.num_samples > 0) )
   {
-    std::string out_sample = "sampledata_T" + std::to_string(passage) + ".txt";
-    sprintf(fn, out_sample, output_folder);
+    std::string out_sample = "sampledata_T" + out_string + ".txt";
+    sprintf(fn, out_sample.c_str());
     //sprintf(fn, "%s/sampledata.txt", output_folder);
     sample_data.open(fn);
     sample_data.setf(std::ios::fixed);
