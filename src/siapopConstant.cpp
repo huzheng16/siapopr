@@ -152,6 +152,7 @@ int siapop(double tot_life = 40000.0,
                    bool allow_extinction = true,
                    int num_samples = 0,
                    int sample_size = 0,
+                   int passage = 0,
                    double detection_threshold = 0.0,
                    double observation_frequency = 0.0,
                    SEXP observation_times = R_NilValue,
@@ -266,6 +267,7 @@ int siapop(double tot_life = 40000.0,
     params.convert("num_sims", gpcons.num_sims);
     params.convert("num_samples", gpcons.num_samples);
     params.convert("sample_size", gpcons.sample_size);
+    params.convert("passage", gpcons.passage);
     params.convert("detection_threshold", gpcons.detection_threshold);
     params.convert("observation_frequency", gpcons.observation_frequency);
     if (gpcons.observation_frequency == 0) gpcons.observation_frequency = gpcons.tot_life;
@@ -360,6 +362,7 @@ int siapop(double tot_life = 40000.0,
     gpcons.num_sims = num_sims;
     gpcons.num_samples = num_samples;
     gpcons.sample_size = sample_size;
+    gpcons.passage = passage;
     gpcons.detection_threshold = detection_threshold;
     gpcons.observation_frequency = observation_frequency;
     if ( observation_frequency == 0)
@@ -493,7 +496,9 @@ int siapop(double tot_life = 40000.0,
 
   // declare and open other output streams for time and end of sim clone list
   std::ofstream clonedata;
-  sprintf(fn, "%s/clonedata.txt", output_folder);
+  std::string out_clone = "%s/clonedata_T" + to_string(passage) + ".txt";
+  sprintf(fn, out_clone, output_folder);
+  //sprintf(fn, "%s/clonedata.txt", output_folder);
   clonedata.open(fn);
   clonedata.setf(std::ios::fixed);
   clonedata.precision(12);
@@ -509,7 +514,9 @@ int siapop(double tot_life = 40000.0,
   }
 
   std::ofstream timedata;
-  sprintf(fn, "%s/timedata.txt", output_folder);
+  std::string out_time = "%s/timedata_T" + to_string(passage) + ".txt";
+  sprintf(fn, out_time, output_folder);
+  //sprintf(fn, "%s/timedata.txt", output_folder);
   timedata.open(fn);
   timedata.setf(std::ios::fixed);
   timedata.precision(12);
@@ -542,7 +549,9 @@ int siapop(double tot_life = 40000.0,
   std::ofstream sample_data;
   if( (gpcons.sample_size > 0) & (gpcons.num_samples > 0) )
   {
-    sprintf(fn, "%s/sampledata.txt", output_folder);
+    std::string out_sample = "%s/sampledata_T" + to_string(passage) + ".txt";
+    sprintf(fn, out_sample, output_folder);
+    //sprintf(fn, "%s/sampledata.txt", output_folder);
     sample_data.open(fn);
     sample_data.setf(std::ios::fixed);
     //sample_data << "run\tsample_number\tunique_id\tnumber_obs\n";
