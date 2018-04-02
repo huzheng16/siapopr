@@ -222,7 +222,7 @@ int siapop(double tot_life = 40000.0,
   // declare and open output stream for simulation statistics
   char fn[100];
   std::ofstream sim_stats;
-  std::string out_sim_stats = "%s/sim_stats_T" + to_string(passage) + ".txt";
+  std::string out_sim_stats = "%s/sim_stats_T" + std::to_string(passage) + ".txt";
   sprintf(fn, out_sim_stats, output_folder);
   //sprintf(fn,"%s/sim_stats.txt", output_folder);
   sim_stats.open(fn);
@@ -500,7 +500,7 @@ int siapop(double tot_life = 40000.0,
 
   // declare and open other output streams for time and end of sim clone list
   std::ofstream clonedata;
-  std::string out_clone = "%s/clonedata_T" + to_string(passage) + ".txt";
+  std::string out_clone = "%s/clonedata_T" + std::to_string(passage) + ".txt";
   sprintf(fn, out_clone, output_folder);
   //sprintf(fn, "%s/clonedata.txt", output_folder);
   clonedata.open(fn);
@@ -518,7 +518,7 @@ int siapop(double tot_life = 40000.0,
   }
 
   std::ofstream timedata;
-  std::string out_time = "%s/timedata_T" + to_string(passage) + ".txt";
+  std::string out_time = "%s/timedata_T" + std::to_string(passage) + ".txt";
   sprintf(fn, out_time, output_folder);
   //sprintf(fn, "%s/timedata.txt", output_folder);
   timedata.open(fn);
@@ -553,7 +553,7 @@ int siapop(double tot_life = 40000.0,
   std::ofstream sample_data;
   if( (gpcons.sample_size > 0) & (gpcons.num_samples > 0) )
   {
-    std::string out_sample = "%s/sampledata_T" + to_string(passage) + ".txt";
+    std::string out_sample = "%s/sampledata_T" + std::to_string(passage) + ".txt";
     sprintf(fn, out_sample, output_folder);
     //sprintf(fn, "%s/sampledata.txt", output_folder);
     sample_data.open(fn);
