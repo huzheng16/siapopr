@@ -63,6 +63,7 @@ void ConstantParameterList::init()
     insert(std::make_pair("is_custom_model", "0"));
     insert(std::make_pair("num_samples", "0"));
     insert(std::make_pair("sample_size", "0"));
+    insert(std::make_pair("passage", "0"));
     insert(std::make_pair("detection_threshold", "0"));
     insert(std::make_pair("birth_rate", "1.5"));
     insert(std::make_pair("death_rate", "1"));
