@@ -220,7 +220,9 @@ int siapop(double tot_life = 40000.0,
   // declare and open output stream for simulation statistics
   char fn[100];
   std::ofstream sim_stats;
-  sprintf(fn,"%s/sim_stats.txt", output_folder);
+  std::string out_sim_stats = "%s/sim_stats_T" + to_string(passage) + ".txt";
+  sprintf(fn, out_sim_stats, output_folder);
+  //sprintf(fn,"%s/sim_stats.txt", output_folder);
   sim_stats.open(fn);
   sim_stats.setf(std::ios::fixed);
   sim_stats.precision(8);
