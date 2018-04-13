@@ -21,6 +21,8 @@
 // Functions for generating distributions
 void cdoubleexp(double *fitness, struct FitnessParameters *fit_params, gsl_rng* rng)
 {
+  (*fitness) = 1;
+  while (*fitness > fit_params->upper_fitness) {
   double z = gsl_ran_flat(rng, 0, 1);
 
   if( z <= fit_params->pass_prob )
@@ -36,6 +38,7 @@ void cdoubleexp(double *fitness, struct FitnessParameters *fit_params, gsl_rng* 
   else
   {
     (*fitness) = -1 * gsl_ran_exponential(rng, 1 / fit_params->beta_fitness);
+  }
   }
 }
 
