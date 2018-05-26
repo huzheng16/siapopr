@@ -813,7 +813,8 @@ int siapop(double tot_life = 40000.0,
       }
     }
     // Trim tree if threshold is higher. Otherwise, Traverse
-    population.TreeTrim(gpcons.detection_threshold, gpcons.max_pop);
+    // population.TreeTrim(gpcons.detection_threshold, gpcons.max_pop);
+    population.TreeTrim(gpcons.detection_threshold, population.tot_cell_count);
     // Output of end state with clone info
     Rcpp::Rcout << "Traversing and outputting run " << sim << "\n";
     population.Traverse(clonedata, sim, gpcons.count_alleles);
