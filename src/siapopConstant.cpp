@@ -773,13 +773,15 @@ int siapop(double tot_life = 40000.0,
       }
 
       
-      if((population.tot_cell_count % 50000) == 0)
-      {
-      Rcpp::Rcout << "Time: " << current_time << "\t size: " << population.tot_cell_count << "\n";
-      }
+      //if((population.tot_cell_count % 50000) == 0)
+      //{
+      //Rcpp::Rcout << "Time: " << current_time << "\t size: " << population.tot_cell_count << "\n";
+      //}
     
     }
-
+    
+    Rcpp::Rcout << "Time: " << current_time << "\t size: " << population.tot_cell_count << "\n";
+    
     // nonextinction checker - if set to false and goes extinction, restart that sim
     if( (population.tot_cell_count == 0) && (gpcons.allow_extinction == false) )
     {
