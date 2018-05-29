@@ -793,12 +793,12 @@ int siapop(double tot_life = 40000.0,
     }
 
     // If simulation made it to the max_pop in the alotted time
-    //if( (population.tot_cell_count >= gpcons.max_pop) &&
-    //    (current_time < gpcons.tot_life) )
-    //{
-    //  count_detect = count_detect + 1;
-    //  avg_sim_endtime = avg_sim_endtime + (current_time) / (double)gpcons.num_sims;
-    //}
+    if( (population.tot_cell_count >= gpcons.max_pop) &&
+        (current_time < gpcons.tot_life) )
+    {
+      count_detect = count_detect + 1;
+      avg_sim_endtime = avg_sim_endtime + (current_time) / (double)gpcons.num_sims;
+    }
 
     // Final Timed Output
     population.Traverse(timedata, sim, current_time, gpcons.trace_ancestry, gpcons.count_alleles);
