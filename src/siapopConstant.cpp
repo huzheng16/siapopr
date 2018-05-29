@@ -744,7 +744,7 @@ int siapop(double tot_life = 40000.0,
 
     // Begin single simulation with while loop that exists when hit max time, max pop, or extinction
     //while ( (population.tot_cell_count < gpcons.max_pop) &&
-    while ( (population.tot_cell_count > 0) &&
+    while ( (population.tot_cell_count > 0) && (population.tot_cell_count < gpcons.max_pop) &&
             (current_time < gpcons.tot_life) )
     {
       Rcpp::checkUserInterrupt();
