@@ -738,9 +738,9 @@ int siapop(double tot_life = 40000.0,
       Rcpp::Rcout << "Ancestor File Read...";
     }
 
-    Rcpp::Rcout << "Output Ancestor Population...";
+    // Rcpp::Rcout << "Output Ancestor Population...";
     population.Traverse(timedata, sim, current_time, gpcons.trace_ancestry, gpcons.count_alleles);
-    Rcpp::Rcout << "Ancestor Output Written...\n";
+    // Rcpp::Rcout << "Ancestor Output Written...\n";
 
     // Begin single simulation with while loop that exists when hit max time, max pop, or extinction
     //while ( (population.tot_cell_count < gpcons.max_pop) &&
