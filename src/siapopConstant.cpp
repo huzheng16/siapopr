@@ -818,9 +818,9 @@ int siapop(double tot_life = 40000.0,
     // population.TreeTrim(gpcons.detection_threshold, gpcons.max_pop);
     population.TreeTrim(gpcons.detection_threshold, population.tot_cell_count);
     // Output of end state with clone info
-    Rcpp::Rcout << "Traversing and outputting run " << sim << "\n";
+    // Rcpp::Rcout << "Traversing and outputting run " << sim << "\n";
     population.Traverse(clonedata, sim, gpcons.count_alleles);
-    Rcpp::Rcout << "Traversal Done\n";
+    // Rcpp::Rcout << "Traversal Done\n";
 
     population.DeleteList();
 
