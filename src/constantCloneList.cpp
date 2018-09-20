@@ -389,7 +389,15 @@ void ConstantCloneList::NewCloneFitMut::operator()(struct clone *new_clone, stru
       did_count_driver = true;
       new_clone->is_driver = true;
     }
+      
+    if (parent_clone->is_driver)
+    {
+    new_clone->birth_rate = parent_clone->birth_rate;
+    }
+    else
+    {
     new_clone->birth_rate = fmax(0, additional_rate + parent_clone->birth_rate);
+    }
   }
   else
   {
