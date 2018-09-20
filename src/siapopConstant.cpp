@@ -425,17 +425,17 @@ int siapop(double tot_life = 40000.0,
       fit_params.fitness_distribution = fitness_distribution_;
       if( fit_params.fitness_distribution.compare("doubleexp") == 0 )
       {
-        Rcpp::Rcout << "Double Exponential Fitness Distribution\n";
+        // Rcpp::Rcout << "Double Exponential Fitness Distribution\n";
         ConstantGenerateFitness = &cdoubleexp;
       }
       else if( fit_params.fitness_distribution.compare("normal") == 0 )
       {
-        Rcpp::Rcout << "Normal Fitness Distribution\n";
+        // Rcpp::Rcout << "Normal Fitness Distribution\n";
         ConstantGenerateFitness = &cnormal;
       }
       else if( fit_params.fitness_distribution.compare("uniform") == 0 )
       {
-        Rcpp::Rcout << "Uniform Fitness Distribution\n";
+        // Rcpp::Rcout << "Uniform Fitness Distribution\n";
         ConstantGenerateFitness = &cuniform;
       }
       else if( fit_params.fitness_distribution.compare("custom") == 0 )
