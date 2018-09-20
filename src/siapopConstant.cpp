@@ -622,25 +622,25 @@ int siapop(double tot_life = 40000.0,
     }
     else if( punct_params.is_punctuated )
     {
-      Rcpp::Rcout << "Punctuated model\n";
+      // Rcpp::Rcout << "Punctuated model\n";
       NewConstantClone = new ConstantCloneList::NewClonePunct(population, fit_params, mut_params, punct_params, constant_rng);
     }
     else if( fit_params.is_randfitness || mut_params.is_mutator )
     {
       if ( epi_params.is_epistasis )
       {
-        Rcpp::Rcout << "Epistatic model\n";
+        // Rcpp::Rcout << "Epistatic model\n";
         NewConstantClone = new ConstantCloneList::NewCloneEpi(population, fit_params, mut_params, epi_params, constant_rng);
       }
       else
       {
-        Rcpp::Rcout << "Fitness model\n";
+        // Rcpp::Rcout << "Fitness model\n";
         NewConstantClone = new ConstantCloneList::NewCloneFitMut(population, fit_params, mut_params, constant_rng);
       }
     }
     else
     {
-      Rcpp::Rcout << "No parameters model\n";
+      // Rcpp::Rcout << "No parameters model\n";
       NewConstantClone = new ConstantCloneList::NewCloneNoParams(population);
     }
 
@@ -674,7 +674,7 @@ int siapop(double tot_life = 40000.0,
     }
     else // ancestor file exists to read from
     {
-      Rcpp::Rcout << "Reading ancestor file...";
+      // Rcpp::Rcout << "Reading ancestor file...";
 
       population.tot_rate = 0;
       population.tot_cell_count = 0;
@@ -735,7 +735,7 @@ int siapop(double tot_life = 40000.0,
           ancestor_map.clear();
         }
       }
-      Rcpp::Rcout << "Ancestor File Read...";
+      // Rcpp::Rcout << "Ancestor File Read...";
     }
 
     // Rcpp::Rcout << "Output Ancestor Population...";
