@@ -342,11 +342,12 @@ void ConstantCloneList::AdvanceState(double curr_time, double next_time, gsl_rng
 
   }
 
-  if (!flag)
-  {
-    std::cout << "error: step not completed" << "\n";
-    exit(0);
-  }
+  //if (!flag)
+  //{
+  //  std::cout << "error: step not completed" << "\n";
+  //  exit(0);
+  //}
+
 }
 
 
